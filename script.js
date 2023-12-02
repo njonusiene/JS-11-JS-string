@@ -17,9 +17,9 @@ mygtukas.addEventListener("click", function(){
 
 // 2. Sukurk input, kur vartotojas įves savo vardą. Įvedus - alert'ink kokio ilgio yra vardas. Tačiau užtikrink, kad priekyje ir gale nebūtų įskaičiuoti tarpeliai.
 
-var tikrintiButton = document.getElementById("patikrinti");
+const mygtukas1 = document.getElementById("mygtukas1");
 
-tikrintiButton.addEventListener("click", function() {
+mygtukas1.addEventListener("click", function() {
     const vardas1 = document.getElementById('vardas1').value.trim();
 
     if (vardas1.length > 0) {
@@ -30,5 +30,22 @@ tikrintiButton.addEventListener("click", function() {
 });
 
 // 3. Sukurk input, kur vartotojas įves savo pilną vardą (t.y. vardą ir pavardę). Padaryk, kad JS pridėtų du h1 tag'us, viename - vardas, kitame - pavardė.
+
+const mygtukas2 = document.getElementById("mygtukas2");
+
+mygtukas2.addEventListener("click", function(){ 
+    const vardas2 = document.getElementById('vardas2').value;
+    const bNames = vardas2.split(" ");
+    const firstName = bNames[0]
+    const lastName = bNames[1]
+
+    document.body.h1 = '';
+
+    const h1 = document.createElement("h1");
+    h1.innerHTML = `Vardas: ${firstName} <br>\n Pavardė: ${lastName}`;
+  
+    document.body.appendChild(h1); 
+    
+});
 
 // Pakoreguok trečią pratimą, kad įskaičiuotų, jei pavardė ilgesnė nei vienas žodis.
